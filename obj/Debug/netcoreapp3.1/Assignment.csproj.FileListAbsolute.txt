@@ -1,0 +1,13 @@
+D:\Apps\Wintec\2020 S2\Data Structures\Assignment\bin\Debug\netcoreapp3.1\Assignment.exe
+D:\Apps\Wintec\2020 S2\Data Structures\Assignment\bin\Debug\netcoreapp3.1\Assignment.deps.json
+D:\Apps\Wintec\2020 S2\Data Structures\Assignment\bin\Debug\netcoreapp3.1\Assignment.runtimeconfig.json
+D:\Apps\Wintec\2020 S2\Data Structures\Assignment\bin\Debug\netcoreapp3.1\Assignment.runtimeconfig.dev.json
+D:\Apps\Wintec\2020 S2\Data Structures\Assignment\bin\Debug\netcoreapp3.1\Assignment.dll
+D:\Apps\Wintec\2020 S2\Data Structures\Assignment\bin\Debug\netcoreapp3.1\Assignment.pdb
+D:\Apps\Wintec\2020 S2\Data Structures\Assignment\obj\Debug\netcoreapp3.1\Assignment.csprojAssemblyReference.cache
+D:\Apps\Wintec\2020 S2\Data Structures\Assignment\obj\Debug\netcoreapp3.1\Assignment.AssemblyInfoInputs.cache
+D:\Apps\Wintec\2020 S2\Data Structures\Assignment\obj\Debug\netcoreapp3.1\Assignment.AssemblyInfo.cs
+D:\Apps\Wintec\2020 S2\Data Structures\Assignment\obj\Debug\netcoreapp3.1\Assignment.csproj.CoreCompileInputs.cache
+D:\Apps\Wintec\2020 S2\Data Structures\Assignment\obj\Debug\netcoreapp3.1\Assignment.dll
+D:\Apps\Wintec\2020 S2\Data Structures\Assignment\obj\Debug\netcoreapp3.1\Assignment.pdb
+D:\Apps\Wintec\2020 S2\Data Structures\Assignment\obj\Debug\netcoreapp3.1\Assignment.genruntimeconfig.cache
