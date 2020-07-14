@@ -12,7 +12,7 @@ namespace Assignment {
         if (i != 19) text = text + "\n"; 
       }
       File.WriteAllText("./numbers.txt", text);
-      String[] content = File.ReadAllText("./numbers.txt").Split("\n");
+      String[] content = File.ReadAllLines("./numbers.txt");
       int[] numbers = new int[content.Length];
       Console.Write("[");
       for (int i = 0; i < content.Length; i++) {

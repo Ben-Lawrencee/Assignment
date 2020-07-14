@@ -16,9 +16,9 @@ namespace Assignment {
         File.WriteAllText("./numbers" + (i + 1) + ".txt", text);
       }
       LinkedList<int> linkedNumbers = new LinkedList<int>();
-      linkedNumbers = addToLinkedListInt(linkedNumbers, File.ReadAllText("./numbers1.txt").Split("\n"));
-      linkedNumbers = addToLinkedListInt(linkedNumbers, File.ReadAllText("./numbers2.txt").Split("\n"));
-      linkedNumbers = addToLinkedListInt(linkedNumbers, File.ReadAllText("./numbers3.txt").Split("\n"));
+      linkedNumbers = addToLinkedListInt(linkedNumbers, File.ReadAllLines("./numbers1.txt"));
+      linkedNumbers = addToLinkedListInt(linkedNumbers, File.ReadAllLines("./numbers2.txt"));
+      linkedNumbers = addToLinkedListInt(linkedNumbers, File.ReadAllLines("./numbers3.txt"));
       int middle = (int)Math.Floor((decimal)linkedNumbers.Count / 2);
       LinkedListNode<int> node = linkedNumbers.First;
       for (int i = 0; i < linkedNumbers.Count; i++) {

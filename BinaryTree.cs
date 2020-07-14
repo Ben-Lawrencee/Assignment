@@ -32,60 +32,51 @@ namespace Assignment {
       Console.WriteLine("Binary Tree Created");
       List<BinaryTreeNode> List = new List<BinaryTreeNode>();
       List.Add(topNode);
-      displayTree(List);
+      displayTree(List, 0);
     }
-    public void displayTree(List<BinaryTreeNode> list) {
+    public void displayTree(List<BinaryTreeNode> list, int depth) {
       int count = list.Count;
       if (count == 0) return;
-      Console.Write("[");
+      Console.Write("Layer: {0} [", depth);
       BinaryTreeNode node;
-      for( int i = 0; i < count; i++) {
-        node = list[i];
-        Console.WriteLine("Index: {0}\nList.Count: {1}\nCount: {2}", i, list.Count, count);
-        list.RemoveAt(i);
-        Console.Write("{0}", node.getValue());
-        if (i != count - 1) Console.Write(",");
-        if (node.getLeft() != null) list.Add(node.getLeft());
-        if (node.getRight() != null) list.Add(node.getRight());
+      for(int i = 0; i < count; i++) {
+        node = list[0];
+        list.RemoveAt(0);
+        Console.Write("{0}", node.value);
+        if (i != count - 1) Console.Write(", ");
+        if (node.left != null) list.Add(node.left);
+        if (node.right != null) list.Add(node.right);
       }
-      Console.Write("]");
-      displayTree(list);
+      Console.Write("]\n");
+      displayTree(list, depth + 1);
     }
     public void add(int num, BinaryTreeNode node) {
-      if (num < node.getValue()) {
-        if (node.getLeft() == null) {
-          node.setLeft(new BinaryTreeNode(num, null, null));
+      if (num == node.value) return; //If number already exists. Return
+      int temp = 0;
+      if (num > node.value) {
+        if (num > node.right.value) { //If number is greater than right. Make new right and connect that right with prevs rights right.
+          temp = node.right.value;
+          node.right.value = num;
+          if (node.right.right == null) node.right.setRight(new BinaryTreeNode(temp, node.right.left, node.right.right));
+          else {
+
+          }
         } else {
-          add(num, node.getLeft());
-        }
-      } else {
-        if (node.getRight() == null) {
-          node.setRight(new BinaryTreeNode(num, null, null));
-        } else {
-          add(num, node.getRight());
+          
         }
       }
     }
   }
 
   public class BinaryTreeNode {
-    private int value;
-    private BinaryTreeNode left;
-    private BinaryTreeNode right;
+    public int value;
+    public BinaryTreeNode left;
+    public BinaryTreeNode right;
 
     public BinaryTreeNode(int newValue, BinaryTreeNode newLeft, BinaryTreeNode newRight) {
       value = newValue;
       if (newLeft != null) left = newLeft;
       if (newRight != null) right = newRight;
-    }
-    public int getValue() {
-      return value;
-    }
-    public BinaryTreeNode getLeft() {
-      return left;
-    }
-    public BinaryTreeNode getRight() {
-      return right;
     }
     public void setLeft(BinaryTreeNode newNode) {
       left = newNode;
