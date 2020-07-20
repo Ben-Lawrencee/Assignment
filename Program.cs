@@ -5,27 +5,35 @@ namespace Assignment {
   class Program {
     static void Main(string[] args) {
       Console.Clear();
-      ArrayTask.run();
-      LinkedList.run();
+      ArrayTask.run(); //Runs array's task
+      LinkedList.run(); //Runs LinkedList's task
 
+      //Binary Search Tree Task :
+
+      //Writes random numbers to a file
       String text = "";
       Random rand = new Random();
+      //Loops three times for three files
       for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 20; j++) {
+        //Loops 20 times to make 20 random numbers for each file
+        for (int j = 0; j < 20; j++) { 
           text = text + rand.Next(1, 21) + "\n";
         }
-        File.WriteAllText("./numbers" + (i + 1) + ".txt", text);
+        File.WriteAllText("./numbers" + (i + 1) + ".txt", text); //Creates a file with 20 random numbers inside
+        text = "";
       }
+      //Reads all the numbers from each file into a binary search tree
       int[] numbers;
       int index = 0;
       String[] file;
-      for (int i = 0; i < 3; i++) {
-        file = File.ReadAllLines("./numbers" + (i + 1) + ".txt");
+      for (int i = 0; i < 3; i++) { //Loops for each file
+        file = File.ReadAllLines("./numbers" + (i + 1) + ".txt"); //Reads the files lines
+        //Makes a integer array from the file's content
         numbers = new int[file.Length];
         foreach (String j in file) {
+          if (j.Length == 0) continue; //Continue if string is empty
           try {
-            if (j.Length == 0) continue;
-            numbers[index] = int.Parse(j);
+            numbers[index] = int.Parse(j); //Add to the array
           } catch {
             Console.WriteLine("Character was not a number: \"{0}\"", j);
             continue;
@@ -33,16 +41,25 @@ namespace Assignment {
           index++;
         }
         index = 0;
-        BinaryTree tree = new BinaryTree(numbers);
+        BinarySearchTree tree = new BinarySearchTree(numbers);
         tree.displayTree();
         tree.displayPrimes();
       }
+      String[] tableContent = {"Banana","Banana","Orange","Apple","Strawberry"};
+      HashTable ht = new HashTable(tableContent);
+      Console.WriteLine(ht.getCharFrequency());
+      Console.WriteLine(ht.getStringFrequency());
+
+      //Best case
+      ht = new HashTable(5);
+      Console.WriteLine(ht.getHash("ree"));
     }
     public static Boolean isPrime(int n) {
       Boolean b = true;
       int max = (int)Math.Sqrt((double)n);
+      //Loops through 2 - Square root of given number
       for (int i = 2; i <= max; i++) {
-        if (n % i == 0) {
+        if (n % i == 0) { //If divisible by i equals 2. Return false
           b = false;
           break;
         }

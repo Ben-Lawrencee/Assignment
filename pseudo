@@ -1,0 +1,42 @@
+function binarySearch(sortedList, searchValue) 
+  middle = sortedList[sortedList/2]
+  if middle == searchValue
+    return true
+  i = sortedList/2
+  String direction = ""
+  while (i > 0 && i < sortedList.Length) 
+    value = sortedList[i]
+    if value == searchValue
+      return true
+    else if searchValue < value
+      if direction == "up"
+        return false
+      i--
+      direction = "down"
+    else 
+      if direction == "down"
+        return false
+      i++
+      direction = "up"
+  return false
+
+  function binarySearch(sortedList, num)
+    variable middle = middle value in sortedList
+    if middle equals num return true
+    variable i equals the middle index number
+    variable direction equals an empty string
+    while i is greater than 0 and i is less than sortedList length
+      variable value equals sortedList[i]
+      if num equals value return true
+      else if value is less than num
+        if direction equals "down"
+          return false
+        direction equals "up"
+        add 1 to i
+      else  
+        if direction equals "up"
+          return false
+        direction equals "down"
+        minus 1 from i
+    return false
+
