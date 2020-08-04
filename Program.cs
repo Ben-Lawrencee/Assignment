@@ -4,7 +4,6 @@ using System.IO;
 namespace Assignment {
   class Program {
     static void Main(string[] args) {
-      Console.Clear();
       ArrayTask.run(); //Runs array's task
       LinkedList.run(); //Runs LinkedList's task
 
@@ -42,17 +41,11 @@ namespace Assignment {
         }
         index = 0;
         BinarySearchTree tree = new BinarySearchTree(numbers);
+        Console.WriteLine("Displaying tree {0}", i + 1);
         tree.displayTree();
         tree.displayPrimes();
       }
-      String[] tableContent = {"Banana","Banana","Orange","Apple","Strawberry"};
-      HashTable ht = new HashTable(tableContent);
-      Console.WriteLine(ht.getCharFrequency());
-      Console.WriteLine(ht.getStringFrequency());
-
-      //Best case
-      ht = new HashTable(5);
-      Console.WriteLine(ht.getHash("ree"));
+      HashTableTask.run();
     }
     public static Boolean isPrime(int n) {
       Boolean b = true;

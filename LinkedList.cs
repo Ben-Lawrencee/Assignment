@@ -31,8 +31,16 @@ namespace Assignment {
       //Loops through all values in linked list, checking each if its a prime and logging it
       LinkedListNode<int> node = linkedNumbers.First;
       Console.WriteLine("Displaying prime numbers in Linked List:");
+      int counter = 0;
       for (int i = 0; i < linkedNumbers.Count; i++) {
-        if (Program.isPrime(node.Value)) Console.Write("[{0},{1}]", i, node.Value);
+        if (Program.isPrime(node.Value)) {
+          Console.Write("[{0},{1}]", i, node.Value);
+          counter++;
+          if (counter == 5) {
+            Console.Write("\n");
+            counter = 0;
+          } 
+        } 
         node = node.Next;
       }
       Console.Write("\n");
