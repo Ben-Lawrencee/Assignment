@@ -18,11 +18,11 @@ namespace Assignment {
       run("./numbers.txt");
     }
     public static void run(String file) {
-      Console.WriteLine("Displaying numbers:");
       if (!File.Exists(file)) { //If file doesn't exist. Display error
         Console.WriteLine("Error: File does not exist");
         return;
       }
+      Console.WriteLine("Displaying numbers:");
       //Gets numbers from file
       String[] content = File.ReadAllLines(file);
       int numOfPrimes = 0;
